@@ -29,5 +29,10 @@ module Freebenta
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Slim template
+    config.generators do |g|
+      g.template_engine :slim
+    end
   end
 end
