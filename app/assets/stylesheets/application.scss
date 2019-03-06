@@ -1,9 +1,13 @@
 /*
-| application.scss
+| application
 */
 
+@import "lib/fontawesome";
+@import "bootstrap";
+
+/*
+| gem: stisla-rails
+*/
 @import "style";
 @import "components";
-
-@import "simple-form-custom";
 
