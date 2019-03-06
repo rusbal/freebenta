@@ -10,12 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// Basic
 //= require jquery3
+//= require popper.js
 //= require bootstrap
+//
+// Rails
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //
+// Stisla
+//= require nicescroll/jquery.nicescroll
 //= require stisla
 //= require scripts
 //
