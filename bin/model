@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+# https://stackoverflow.com/questions/9757261/how-do-i-run-a-ruby-file-in-a-rails-environment
+
+#
+# Prints the columns and associations of the model.
+# $ bin/model user
+#
+class Model
+  def initialize
+    @model = ARGV[0].split('_').collect(&:capitalize).join.constantize
+    set_option
+  rescue NameError
+    puts "#{ARGV[0].capitalize} is not a known model."
+    abort
+  end
+
+  def run
+    @model.connection
+    print_columns if @option.nil? || @option == "-c"
+    print_associations if @option.nil? || @option == "-a"
+  end
+
+  private
+
+  def print_columns
+    separator char: "="
+    puts "#{@model} columns:"
+    separator
+    puts @model.inspect
+             .gsub(/^.*\(/, "  ")
+             .gsub(/, /, "\n  ")
+             .gsub(/\)/, "")
+  end
+
+  def print_associations
+    separator char: "="
+    puts "#{@model} associations:"
+    separator
+    reflections = @model.reflect_on_all_associations
+                      .sort_by(&:name)
+    reflections.each do |reflection|
+      puts "  #{reflection.macro}: #{reflection.name}"
+    end
+  end
+
+  def separator(char: "-", n: 60)
+    puts char * n
+  end
+
+  def set_option
+    valid_options = %w[-c -a]
+    if valid_options.include? ARGV[1]
+      @option = ARGV[1]
+    end
+  end
+end
+
+if ARGV.count == 0
+  puts "Please pass model name."
+  puts "$ bin/model user"
+  return
+end
+require File.expand_path('../../config/environment', __FILE__)
+Model.new.run
