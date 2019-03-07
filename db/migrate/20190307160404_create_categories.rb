@@ -3,6 +3,7 @@ class CreateCategories < ActiveRecord::Migration[5.2]
     create_table :categories do |t|
       t.string :name, null: false
       t.string :slug, null: false
+      t.boolean :is_published, default: true
       t.timestamps
     end
 
