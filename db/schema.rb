@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_160404) do
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
+    t.boolean "is_published", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
