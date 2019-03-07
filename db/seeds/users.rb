@@ -1,7 +1,3 @@
-# root
-# admin
-# advertiser
-# user
 
 root = [ 'raymond@philippinedev.com' ]
 admin = [
@@ -14,17 +10,17 @@ advertiser = [
   'ads2@gmail.com',
   'ads3@gmail.com'
 ]
-user = [
-  'user@gmail.com',
-  'user2@gmail.com',
-  'user3@gmail.com',
-  'user4@gmail.com',
-  'user5@gmail.com',
-  'user6@gmail.com',
-  'user7@gmail.com',
-  'user8@gmail.com',
-  'user9@gmail.com',
-  'user10@gmail.com'
+commoner = [
+  'commoner@gmail.com',
+  'commoner2@gmail.com',
+  'commoner3@gmail.com',
+  'commoner4@gmail.com',
+  'commoner5@gmail.com',
+  'commoner6@gmail.com',
+  'commoner7@gmail.com',
+  'commoner8@gmail.com',
+  'commoner9@gmail.com',
+  'commoner10@gmail.com'
 ]
 
 def create(email, type)
@@ -37,9 +33,9 @@ def create(email, type)
 end
 
 if User.count == 0
-  root.map { |email| create(email, 'root') }
-  admin.map { |email| create(email, 'admin') }
-  advertiser.map { |email| create(email, 'advertiser') }
-  user.map { |email| create(email, 'user') }
+  root.map { |email| create(email, 'Root') }
+  admin.map { |email| create(email, 'Admin') }
+  advertiser.map { |email| create(email, 'Advertiser') }
+  commoner.map { |email| create(email, 'Commoner') }
 end
 

@@ -1,0 +1,2 @@
+class Commoner < User
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_183309) do
+ActiveRecord::Schema.define(version: 2019_03_07_192624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,24 @@ ActiveRecord::Schema.define(version: 2019_03_07_183309) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_companies_on_name", unique: true
     t.index ["slug"], name: "index_companies_on_slug", unique: true
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "contactable_type", null: false
+    t.integer "contactable_id", null: false
+    t.string "mobile"
+    t.string "landline"
+    t.string "email"
+    t.string "address_line"
+    t.string "address_city"
+    t.string "address_province"
+    t.string "address_postal_code"
+    t.string "address_country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_city"], name: "index_contacts_on_address_city"
+    t.index ["address_province"], name: "index_contacts_on_address_province"
+    t.index ["contactable_type", "contactable_id"], name: "index_contacts_on_contactable_type_and_contactable_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_183309) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["type"], name: "index_users_on_type"
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 

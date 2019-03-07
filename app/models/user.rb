@@ -4,4 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
+
+  include Contactable
+
+  scope :root, -> { where(type: 'root') }
+  scope :admin, -> { where(type: 'admin') }
+  scope :advertiser, -> { where(type: 'advertiser') }
+  scope :commoner, -> { where(type: 'commoner') }
 end
