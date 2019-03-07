@@ -12,5 +12,9 @@ if User.count == 0
   user.password = 'default'
   user.password_confirmation = 'default'
   user.save!
+
+  Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].each do |filename|
+    load(filename)
+  end
 end
 
