@@ -9,7 +9,7 @@
 puts "Seeding..."
 
 Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].sort.each do |filename|
-  puts " #{filename}..."
+  puts " #{filename}"
   load(filename)
 end
 
