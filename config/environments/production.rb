@@ -71,12 +71,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :domain => "freebenta.philippinedev.com",
-    :user_name => "postmaster@freebenta.philippinedev.com",
-    :password => "b2420d2639026a06f65e4f93063fe31d-acb0b40c-b670261e"
+    port: 587,
+    address: "smtp.mailgun.org",
+    user_name: "postmaster@freebenta.philippinedev.com",
+    password: "b2420d2639026a06f65e4f93063fe31d-acb0b40c-b670261e",
+    domain: "freebenta.philippinedev.com",
+    authentication: :plain,
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
