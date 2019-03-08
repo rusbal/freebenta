@@ -1,0 +1,10 @@
+ul
+  - @items.each do |item|
+    li
+      h4
+        = link_to item.name, item_path
+      div
+        = format_price(item)
+      div
+        = image_tag item.primary_image
+      hr
