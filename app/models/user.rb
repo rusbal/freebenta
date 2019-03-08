@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
 
+  validates :type, presence: true
+  validates :email, presence: true, uniqueness: true
+
   include Contactable
 
   scope :root, -> { where(type: 'root') }
