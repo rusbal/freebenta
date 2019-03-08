@@ -1,0 +1,2 @@
+class ActiveItem < Item
+end

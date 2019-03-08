@@ -7,7 +7,7 @@ if Item.count == 0
     name = Faker::Commerce.product_name
     price = Faker::Commerce.price * 10000
 
-    Item.create! name: name, description: "Desc: #{name}...", price: price
+    Item.create! type: 'ActiveItem', name: name, description: "Desc: #{name}...", price: price
   end
 end
 
