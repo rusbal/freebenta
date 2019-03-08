@@ -45,11 +45,14 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'pundit', '~> 2.0.1'
 gem 'friendly_id', '~> 5.2.5'
 
+# TODO: Faker should be removed on production after development
+gem 'faker', '~> 1.9.3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.8.2'
-  gem 'faker', '~> 1.9.3'
+  # gem 'faker', '~> 1.9.3'
 end
 
 group :development do
