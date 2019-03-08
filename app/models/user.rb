@@ -11,6 +11,7 @@ class User < ApplicationRecord
   include Contactable
 
   has_one_attached :avatar
+  has_many :messages
 
   scope :root, -> { where(type: 'root') }
   scope :admin, -> { where(type: 'admin') }
