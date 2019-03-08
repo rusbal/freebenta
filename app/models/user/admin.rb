@@ -1,2 +1,2 @@
-class Admin < User
+class User::Admin < User
 end

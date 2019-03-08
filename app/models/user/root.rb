@@ -1,2 +1,2 @@
-class Root < User
+class User::Root < User
 end

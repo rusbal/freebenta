@@ -1,2 +1,2 @@
-class Advertiser < User
+class User::Advertiser < User
 end
