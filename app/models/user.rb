@@ -10,8 +10,11 @@ class User < ApplicationRecord
 
   include Contactable
 
+  has_one_attached :avatar
+
   scope :root, -> { where(type: 'root') }
   scope :admin, -> { where(type: 'admin') }
   scope :advertiser, -> { where(type: 'advertiser') }
   scope :commoner, -> { where(type: 'commoner') }
+
 end
