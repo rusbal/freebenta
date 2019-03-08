@@ -70,13 +70,26 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
+
+  # Mailgun SMTP
+  # config.action_mailer.smtp_settings = {
+  #   port: 587,
+  #   address: "smtp.mailgun.org",
+  #   user_name: "postmaster@freebenta.philippinedev.com",
+  #   password: "b2420d2639026a06f65e4f93063fe31d-acb0b40c-b670261e",
+  #   domain: "freebenta.philippinedev.com",
+  #   authentication: :plain,
+  # }
+
+  # Gmail SMTP
   config.action_mailer.smtp_settings = {
     port: 587,
-    address: "smtp.mailgun.org",
-    user_name: "postmaster@freebenta.philippinedev.com",
-    password: "b2420d2639026a06f65e4f93063fe31d-acb0b40c-b670261e",
-    domain: "freebenta.philippinedev.com",
-    authentication: :plain,
+    address: "smtp.gmail.com",
+    user_name: "forrest@philippinedev.com",
+    password: "amazingboy",
+    domain: "gmail.com",
+    authentication: :login,
+    enable_starttls_auto: true,
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
