@@ -1,2 +1,5 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+ul
+- Category.all.sort.each do |category|
+    li
+      = link_to category do
+        = category_with_count(category).html_safe
