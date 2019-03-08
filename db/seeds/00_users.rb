@@ -1,4 +1,6 @@
 
+require 'faker'
+
 root = [ 'raymond@philippinedev.com' ]
 admin = [
   'admin@gmail.com',
@@ -29,6 +31,8 @@ def create(email, type)
   user.type = type
   user.password = 'default'
   user.password_confirmation = 'default'
+  user.first_name = Faker::Name.first_name
+  user.last_name = Faker::Name.last_name
   user.save!
 end
 

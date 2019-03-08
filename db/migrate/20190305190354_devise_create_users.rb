@@ -5,6 +5,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
 
       t.string   :type # root, admin, advertiser, seller, shopper
+      t.string   :first_name
+      t.string   :last_name
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
