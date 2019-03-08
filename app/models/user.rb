@@ -18,4 +18,8 @@ class User < ApplicationRecord
   scope :advertiser, -> { where(type: 'advertiser') }
   scope :commoner, -> { where(type: 'commoner') }
 
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+  alias :name :full_name
 end
