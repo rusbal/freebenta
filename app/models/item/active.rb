@@ -1,2 +1,2 @@
-class ActiveItem < Item
+class Item::Active < Item
 end
