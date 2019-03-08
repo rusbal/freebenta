@@ -25,16 +25,6 @@ ActiveRecord::Schema.define(version: 2019_03_07_192624) do
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.string "slug", null: false
-    t.string "state", default: "active"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_companies_on_name", unique: true
-    t.index ["slug"], name: "index_companies_on_slug", unique: true
-  end
-
   create_table "contacts", force: :cascade do |t|
     t.string "contactable_type", null: false
     t.integer "contactable_id", null: false
