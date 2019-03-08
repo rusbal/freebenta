@@ -1,0 +1,18 @@
+ul
+  - @item.categories.each do |category|
+    li
+      = link_to category.name, category
+h4
+  = @item.name
+div
+  | Price: 
+  = format_price(@item)
+div
+  = image_tag @item.primary_image
+hr
+h5
+  | Images:
+  span.badge.badge-light
+    = @item.images.count
+- @item.images.each do |image|
+  = image_tag image

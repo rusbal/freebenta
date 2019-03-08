@@ -1,10 +1,13 @@
+= link_to 'Categories', '/'
+hr
 ul
   - @items.each do |item|
     li
       h4
-        = link_to item.name, item_path
+        = link_to item.name, item_url(item)
       div
         = format_price(item)
       div
-        = image_tag item.primary_image
+        = link_to item_url(item) do
+          = image_tag item.primary_image
       hr
