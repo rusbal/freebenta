@@ -75,10 +75,13 @@ ActiveRecord::Schema.define(version: 2019_03_08_184059) do
     t.bigint "user_id"
     t.string "type"
     t.string "name", null: false
+    t.string "slug", null: false
     t.string "description"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_items_on_name"
+    t.index ["slug"], name: "index_items_on_slug", unique: true
     t.index ["type"], name: "index_items_on_type"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
