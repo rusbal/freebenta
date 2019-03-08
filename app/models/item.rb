@@ -5,6 +5,7 @@ class Item < ApplicationRecord
 
   has_one_attached :primary_image
   has_many_attached :images
+  has_and_belongs_to_many :categories
 
   belongs_to :commoner, class_name: 'User::Commoner', foreign_key: :user_id
   alias :owner :commoner
