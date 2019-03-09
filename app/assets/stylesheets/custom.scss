@@ -1,0 +1,42 @@
+.m-b-0 {
+  margin-bottom: 0;
+}
+
+.carousel {
+  background-color: #ddd;
+  height: 440px;
+
+  .carousel-item {
+    background-color: #ddd;
+
+    img {
+      height: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  .carousel-caption {
+    bottom: 0;
+  }
+
+  .carousel-indicators {
+    li {
+      background-color: #999;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+    }
+  }
+
+  .carousel-caption {
+    h5 {
+      color: black;
+      text-shadow: 1px 1px 1px white;
+    }
+    p {
+      color: black;
+      text-shadow: 1px 1px 1px white;
+    }
+  }
+}
+

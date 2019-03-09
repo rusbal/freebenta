@@ -7,22 +7,28 @@ h4
 div
   | Price: 
   = format_price(@item)
-div
-  figure
-    = image_tag @item.primary_image
-    figcaption
-      = @item.primary_image.title
-  div
-    = @item.primary_image.description
-hr
-h5
-  | Images:
-  span.badge.badge-light
-    = @item.images.count
-- @item.images.each do |image|
-  figure
-    = image_tag image
-    figcaption
-      = image.title
-  div
-    = image.description
+
+#carouselExampleCaptions.carousel.slide data-ride="carousel"
+  ol.carousel-indicators.m-b-0
+    li.active data-target="#carouselExampleCaptions" data-slide-to="0"
+    - @item.images.each_with_index do |image, idx|
+      li data-target="#carouselExampleCaptions" data-slide-to="#{idx + 1}"
+  .carousel-inner
+    .carousel-item.active
+      = image_tag @item.primary_image.variant(resize: "x400"), class: "d-block"
+      .carousel-caption.d-md-block
+        h5= @item.primary_image.title
+        p= @item.primary_image.description
+    - @item.images.each_with_index do |image, idx|
+      .carousel-item
+        = image_tag image.variant(resize: "x400"), class: "d-block"
+        .carousel-caption.d-md-block
+          h5= image.title
+          p= image.description
+  a.carousel-control-prev href="#carouselExampleCaptions" role="button" data-slide="prev"
+    span.carousel-control-prev-icon aria-hidden="true"
+    span.sr-only Previous
+  a.carousel-control-next href="#carouselExampleCaptions" role="button" data-slide="next"
+    span.carousel-control-next-icon aria-hidden="true"
+    span.sr-only Next
+
