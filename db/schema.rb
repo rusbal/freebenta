@@ -39,12 +39,14 @@ ActiveRecord::Schema.define(version: 2019_03_09_202427) do
   end
 
   create_table "categories", force: :cascade do |t|
+    t.integer "parent_id"
     t.string "name", null: false
     t.string "slug", null: false
     t.boolean "is_published", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
+    t.index ["parent_id"], name: "index_categories_on_parent_id"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 

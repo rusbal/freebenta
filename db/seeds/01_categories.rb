@@ -1,28 +1,46 @@
-categories = [
+root = [
   "Baby Stuff and Toys",
   "Beauty and Health",
-  "Books, Education",
-  "Business and Earning Opportunities",
   "Cars and Automotives",
   "Clothing and Accessories",
-  "Computers",
-  "Construction and Farming",
-  "Consumer Electronics",
-  "Food and Grocery",
-  "Heavy Machinery and Trucks",
-  "Home and Furniture",
-  "Mobile Phones and Tablets",
   "Motorcycles and Scooters",
-  "Musical Instruments",
-  "Pets and Animals",
-  "Real Estate",
+  "Food and Grocery",
   "Services",
-  "Sports and Hobbies",
+  "Entertainment",
+  "Tech and Gadgets",
+  "Home and Business",
 ]
 
+categories = {
+  "Entertainment": [
+    "Books, Education",
+    "Musical Instruments",
+    "Pets and Animals",
+    "Sports and Hobbies",
+  ],
+  "Tech and Gadgets": [
+    "Computers",
+    "Consumer Electronics",
+    "Mobile Phones and Tablets",
+  ],
+  "Home and Business": [
+    "Real Estate",
+    "Construction and Farming",
+    "Business and Earning Opportunities",
+    "Heavy Machinery and Trucks",
+    "Home and Furniture",
+  ]
+}
+
 if Category.count == 0
-  categories.each do |name|
+  root.each do |name|
     Category.create! name: name
   end
-end
 
+  categories.each do |category, subcats|
+    category = Category.where(name: category).first
+    subcats.each do |subcat|
+      category.children.create! name: subcat
+    end
+  end
+end
