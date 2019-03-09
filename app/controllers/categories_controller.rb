@@ -1,7 +1,10 @@
 class CategoriesController < ApplicationController
-  before_action :set_category
+  before_action :set_category, except: :index
 
   layout 'front'
+
+  def index
+  end
 
   def show
     @items = @category.items
