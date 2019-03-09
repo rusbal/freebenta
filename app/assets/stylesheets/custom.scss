@@ -3,8 +3,11 @@
 }
 
 .carousel {
-  background-color: #ddd;
   height: 440px;
+
+  .carousel-inner {
+    background-color: #ddd;
+  }
 
   .carousel-item {
     background-color: #ddd;
