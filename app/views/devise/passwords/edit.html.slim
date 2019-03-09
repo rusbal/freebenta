@@ -13,5 +13,5 @@ h2
                     input_html: { autocomplete: "new-password" }
     = f.input :password_confirmation, label: "Confirm your new password", required: true
   .form-actions
-    = f.button :submit, "Change my password"
+    = f.button :submit, "Change my password", class: 'btn-primary'
 = render "devise/shared/links"
