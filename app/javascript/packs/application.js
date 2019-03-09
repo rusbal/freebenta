@@ -15,4 +15,26 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-console.log('Hello World from Webpacker')
+import $ from 'jquery'
+
+window.app = {}
+
+app.isPageSpecificJs = (check_controller, check_action) => {
+  const controller = $("meta[name='controller']").attr("content")
+  const action = $("meta[name='action']").attr("content")
+
+  if (check_controller && check_controller !== controller) {
+    return false
+  }
+  if (check_action && check_action !== action) {
+    return false
+  }
+  return true
+}
+
+app.debugShow = () => {
+  const controller = $("meta[name='controller']").attr("content")
+  const action = $("meta[name='action']").attr("content")
+  console.log('[controller, action: ' + controller + ', ' + action + ']')
+}
+
