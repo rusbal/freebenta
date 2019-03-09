@@ -44,6 +44,7 @@ gem 'jquery-rails', '~> 4.3.3'
 gem 'bootstrap', '~> 4.3.1'
 gem 'pundit', '~> 2.0.1'
 gem 'friendly_id', '~> 5.2.5'
+gem 'mini_magick', '~> 4.9.3'
 
 # TODO: Faker should be removed on production after development
 gem 'faker', '~> 1.9.3'
