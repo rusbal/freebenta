@@ -8,11 +8,21 @@ div
   | Price: 
   = format_price(@item)
 div
-  = image_tag @item.primary_image
+  figure
+    = image_tag @item.primary_image
+    figcaption
+      = @item.primary_image.title
+  div
+    = @item.primary_image.description
 hr
 h5
   | Images:
   span.badge.badge-light
     = @item.images.count
 - @item.images.each do |image|
-  = image_tag image
+  figure
+    = image_tag image
+    figcaption
+      = image.title
+  div
+    = image.description

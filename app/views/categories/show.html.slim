@@ -9,5 +9,10 @@ ul
         = format_price(item)
       div
         = link_to item_url(item) do
-          = image_tag item.primary_image
+          figure
+            = image_tag item.primary_image
+            figcaption
+              = item.primary_image.title
+          div
+            = item.primary_image.description
       hr
