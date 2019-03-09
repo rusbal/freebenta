@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2019_03_08_184059) do
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false

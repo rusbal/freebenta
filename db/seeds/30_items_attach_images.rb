@@ -1,3 +1,6 @@
+
+require 'faker'
+
 # Settings
 max_image_count = 5
 
@@ -11,10 +14,23 @@ Item.all.each do |item|
   images = random_images(rand(1..max_image_count))
 
   primary_image = images.pop
-  item.primary_image.attach io: File.open(primary_image), filename: 'item.jpg'
+  item.primary_image.attach(io: File.open(primary_image),
+                            filename: 'item.jpg')
+
+  image = item.primary_image
+  image.title = Faker::DcComics.title
+  image.description = Faker::GreekPhilosophers.quote
+  image.save!
 
   images.each do |image|
-    item.images.attach io: File.open(image), filename: 'item.jpg'
+    item.images.attach(io: File.open(image),
+                       filename: 'item.jpg')
+  end
+
+  item.images.each do |image|
+    image.title = Faker::DcComics.title
+    image.description = Faker::GreekPhilosophers.quote
+    image.save!
   end
 end
 
