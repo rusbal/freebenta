@@ -5,9 +5,11 @@ class CreateTags < ActiveRecord::Migration[5.2]
       t.integer :taggable_id, null: false
       t.string  :name
       t.text    :description
+
+      t.timestamps
     end
 
     add_index :tags, [:taggable_type, :taggable_id]
-    add_index :tags, [:taggable_type, :name], :unique => true
+    add_index :tags, :name
   end
 end

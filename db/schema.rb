@@ -104,7 +104,9 @@ ActiveRecord::Schema.define(version: 2019_03_09_202427) do
     t.integer "taggable_id", null: false
     t.string "name"
     t.text "description"
-    t.index ["taggable_type", "name"], name: "index_tags_on_taggable_type_and_name", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_tags_on_name"
     t.index ["taggable_type", "taggable_id"], name: "index_tags_on_taggable_type_and_taggable_id"
   end
 
