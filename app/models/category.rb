@@ -4,5 +4,7 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
 
+  include Taggable
+
   has_and_belongs_to_many :items
 end

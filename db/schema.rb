@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_08_184059) do
+ActiveRecord::Schema.define(version: 2019_03_09_202427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,15 @@ ActiveRecord::Schema.define(version: 2019_03_08_184059) do
     t.datetime "updated_at", null: false
     t.index ["messageable_type", "messageable_id"], name: "index_messages_on_messageable_type_and_messageable_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "taggable_type", null: false
+    t.integer "taggable_id", null: false
+    t.string "name"
+    t.text "description"
+    t.index ["taggable_type", "name"], name: "index_tags_on_taggable_type_and_name", unique: true
+    t.index ["taggable_type", "taggable_id"], name: "index_tags_on_taggable_type_and_taggable_id"
   end
 
   create_table "users", force: :cascade do |t|
