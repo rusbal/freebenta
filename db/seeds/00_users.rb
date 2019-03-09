@@ -15,6 +15,7 @@ def create(email, type)
   user.first_name = Faker::Name.first_name
   user.last_name = Faker::Name.last_name
   user.save!
+  user.confirm
 end
 
 if User.count == 0

@@ -9,8 +9,13 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
     #app
+      h1 Devise
+      - if notice
+        .alert.alert-info role="alert"
+          = notice
+      - if alert
+        .alert.alert-danger role="alert"
+          = alert
       section.section
-        p.notice= notice
-        p.alert= alert
         = yield
 
