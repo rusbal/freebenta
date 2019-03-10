@@ -20,7 +20,14 @@
 
 <body>
   <%= render 'shared/eshop/home_top' %>
-  <%= yield %>
+
+  <div id="home">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+
+  <%- render 'shared/eshop/home_bottom_sections' %>
   <%= render 'shared/eshop/home_footer' %>
 </body>
 

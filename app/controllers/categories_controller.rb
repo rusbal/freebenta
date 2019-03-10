@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_category, except: :index
 
-  layout 'front'
+  layout 'eshop'
 
   def index
   end
