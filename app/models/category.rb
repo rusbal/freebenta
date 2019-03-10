@@ -12,4 +12,8 @@ class Category < ApplicationRecord
   belongs_to :parent, class_name: 'Category', foreign_key: :parent_id, optional: true
 
   scope :root, -> { where(parent_id: nil) }
+
+  def self.tag(tag)
+    joins(:tags).where(tags: { name: tag })
+  end
 end
