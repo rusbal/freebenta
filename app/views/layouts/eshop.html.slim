@@ -16,7 +16,7 @@ html lang="en"
       .container
         .home-wrap
           #home-slick
-            - @category.items.each do |item|
+            - @category.items.order('RANDOM()').each do |item|
               .banner.banner-1
                 = image_tag(item.primary_image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
                 .banner-caption
