@@ -34,5 +34,15 @@ module Freebenta
     config.generators do |g|
       g.template_engine :slim
     end
+
+    config.gradient_css = [
+      'gradient-black-white',
+      'gradient-blue-green',
+      'gradient-green-violet',
+      'gradient-red-orange',
+      'gradient-indigo-cyan',
+      'gradient-amazon',
+    ]
+
   end
 end

@@ -12,4 +12,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 
-Rails.application.config.assets.precompile += %w( front.js front.css eshop.js eshop.css )
+Rails.application.config.assets.precompile += [
+  'front.js', 'front.css',
+  'eshop.js', 'eshop.css',
+]
+
+Rails.application.config.assets.precompile += Rails.configuration.gradient_css.map { |file| "#{file}.css" }
