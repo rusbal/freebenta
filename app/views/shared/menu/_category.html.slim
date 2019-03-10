@@ -1,6 +1,6 @@
 .category-nav
   span.category-header
-    | Categories
+    | #{controller_name == 'home' && action_name == 'index' ? 'Welcome to FreeBenta!' : @category.name }
     i.fa.fa-list
 
   ul.category-list
