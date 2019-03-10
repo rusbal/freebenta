@@ -15,6 +15,7 @@ html lang="en"
     #home
       .container
         .home-wrap
+        - if defined? @category
           #home-slick
             - @category.items.order('RANDOM()').each do |item|
               .banner.banner-1

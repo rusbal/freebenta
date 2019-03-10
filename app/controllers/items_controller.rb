@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item
 
-  layout 'front'
+  layout 'eshop'
 
   def show
   end

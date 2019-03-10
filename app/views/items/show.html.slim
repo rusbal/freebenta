@@ -1,14 +1,15 @@
-ul
-  - @item.categories.each do |category|
-    li
-      = link_to category.name, category
-h4
-  = @item.name
-div
-  | Price: 
-  = format_price(@item)
+.row.m-b-30
+  .col.col-sm-12
+    ul
+      - @item.categories.each do |category|
+        li
+          = link_to category.name, category
+    h4
+      = @item.name
+    div
+      | Price: 
+      = format_price(@item)
 
-.row
   .col.col-lg-8.col-sm-12
     = render 'shared/carousel'
   .col.col-lg-4.col-sm-12

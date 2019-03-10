@@ -1,6 +1,13 @@
 .category-nav
   span.category-header
-    | #{controller_name == 'home' && action_name == 'index' ? 'Welcome to FreeBenta!' : @category.name }
+
+    - if defined? @category
+      | #{controller_name == 'home' && action_name == 'index' ? 'Welcome to FreeBenta!' : @category.name}
+    - elsif defined? @item
+      | #{@item.name}
+    - else
+      | Welcome to FreeBenta!
+
     i.fa.fa-list
 
   ul.category-list
