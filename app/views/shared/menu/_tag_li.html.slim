@@ -11,5 +11,10 @@ li.dropdown.mega-dropdown
               | For #{tag}
           - Category.tag(tag).each do |tag|
             li= link_to tag.name, tag
-        hr.hidden-md.hidden-lg
-
+        hr
+        .hidden-sm.hidden-xs
+          .banner.banner-1.m-b-0
+            = image_tag(image)
+            .banner-caption.text-center
+              h3.white-color.text-uppercase
+                | #{tag.end_with?('s') ? "For #{tag}" : "#{tag}'s"}
