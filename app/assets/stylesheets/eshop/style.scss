@@ -218,7 +218,7 @@ textarea.input {
 }
 
 .list-links li>a:before {
-  content: "\f105";
+  // content: "\f105";
   position: absolute;
   left: 0px;
   font-family: FontAwesome;
@@ -233,9 +233,9 @@ textarea.input {
 
 .list-links li>a:hover, .list-links li>a:focus, .list-links li.active>a {
   color: #F8694A;
-  -webkit-transform: translateX(10px);
-  -ms-transform: translateX(10px);
-  transform: translateX(10px);
+  // -webkit-transform: translateX(1px);
+  // -ms-transform: translateX(1px);
+  // transform: translateX(1px);
 }
 
 .list-links li>a:hover:before, .list-links li>a:focus:before, .list-links li.active>a:before {
@@ -1725,5 +1725,11 @@ textarea.input {
 @media only screen and (max-width: 480px) {
   [class*='col-xs'] {
     width: 100%;
+  }
+}
+
+a {
+  i.fa-caret-down {
+    padding-left: 3px;
   }
 }
