@@ -1,0 +1,10 @@
+.nowrap-children {
+  * {
+    white-space: nowrap;
+  }
+}
+.reset-width {
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
