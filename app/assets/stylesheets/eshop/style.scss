@@ -1739,6 +1739,11 @@ a {
 }
 
 a.card-link > div:hover {
+  .card-body {
+    background: #eee;
+    color: #000;
+    transition: all 1s ease-out;
+  }
   box-shadow: 1px 1px 10px #000;
   filter: none;
   transition: all 1s ease-out;
