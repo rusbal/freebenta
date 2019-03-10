@@ -1,0 +1,42 @@
+li.dropdown.mega-dropdown
+  = link_to "#", class: "dropdown-toggle", data: { toggle: "dropdown" }, 'aria-expanded': "true" do
+    | All
+    i.fa.fa-caret-down
+
+  .custom-menu
+    .row
+      .col-md-4
+        ul.list-links
+          li
+            h3.list-links-title Categories
+          - Category.root.order(:name).each do |cat|
+            - unless ['Entertainment', 'Home and Business', 'Tech and Gadgets'].include? cat.name
+              li= link_to cat.name, cat
+        hr
+        ul.list-links
+          li
+            h3.list-links-title Tech and Gadgets
+          - Category.where(name: 'Tech and Gadgets').first.children.each do |cat|
+            li= link_to cat.name, cat
+        hr
+      .col-md-4
+        ul.list-links
+          li
+            h3.list-links-title Entertainment
+          - Category.where(name: 'Entertainment').first.children.each do |cat|
+            li= link_to cat.name, cat
+        hr
+        ul.list-links
+          li
+            h3.list-links-title Home and Business
+          - Category.where(name: 'Home and Business').first.children.each do |cat|
+            li= link_to cat.name, cat
+        hr
+      .col-md-4.hidden-sm.hidden-xs
+        a.banner.banner-2 href="#"
+          = image_tag("eshop/banner04.jpg")
+          .banner-caption
+            h3.white-color
+              | NEW
+              br
+              | COLLECTION

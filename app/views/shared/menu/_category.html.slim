@@ -3,31 +3,30 @@
 
     - if defined? @category
       | #{controller_name == 'home' && action_name == 'index' ? 'Welcome to FreeBenta!' : @category.name}
+      i.fa.fa-list
     - elsif defined? @item
       | #{@item.name}
     - else
       | Welcome to FreeBenta!
 
-    i.fa.fa-list
-
-  ul.category-list
-    - Category.root.order(:name).each do |cat|
-      li.dropdown.side-dropdown
-        - if cat.children.count > 0
-          = link_to cat, class: "dropdown-toggle", data: { toggle: "dropdown" }, 'aria-expanded': "true" do
-            = cat.name
-            i.fa.fa-angle-right
-          .custom-menu.reset-width.nowrap-children
-            .row
-              .col-md-6
-                ul.list-links
-                  li
-                    h3.list-links-title
-                      = cat.name
-                  - cat.children.each do |subcat|
+  - unless defined? @item
+    ul.category-list
+      - Category.root.order(:name).each do |cat|
+        li.dropdown.side-dropdown
+          - if cat.children.count == 0
+            = link_to cat.name, cat
+          - else
+            = link_to cat, class: "dropdown-toggle", data: { toggle: "dropdown" }, 'aria-expanded': "true" do
+              = cat.name
+              i.fa.fa-angle-right
+            .custom-menu.reset-width.nowrap-children
+              .row
+                .col-md-6
+                  ul.list-links
                     li
-                      = link_to subcat.name, subcat
-                hr.hidden-md.hidden-lg
-        - else
-          = link_to cat.name, cat
-
+                      h3.list-links-title
+                        = cat.name
+                    - cat.children.each do |subcat|
+                      li
+                        = link_to subcat.name, subcat
+                  hr.hidden-md.hidden-lg
