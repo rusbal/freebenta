@@ -16,28 +16,16 @@ html lang="en"
       .container
         .home-wrap
           #home-slick
-            .banner.banner-1
-              = image_tag("eshop/banner01.jpg")
-              .banner-caption.text-center
-                h1 Bags sale
-                h3.white-color.font-weak Up to 50% Discount
-                button.primary-btn Shop Now
-            .banner.banner-1
-              = image_tag("eshop/banner02.jpg")
-              .banner-caption
-                h1.primary-color
-                  | HOT DEAL
-                  br
-                  span.white-color.font-weak Up to 50% OFF
-                button.primary-btn Shop Now
-            .banner.banner-1
-              = image_tag("eshop/banner03.jpg")
-              .banner-caption
-                h1.white-color
-                  | New Product
-                  span Collection
-                button.primary-btn Shop Now
+            - @category.items.each do |item|
+              .banner.banner-1
+                = image_tag(item.primary_image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
+                .banner-caption
+                  h1.white-color.black-border #{item.name}
+                  .price-lg #{format_price(item)}
+                  = link_to "Shop Now", item_url(item), class: "primary-btn"
+            
         = yield
+
     - render 'shared/eshop/home_bottom_sections'
     = render 'shared/eshop/home_footer'
 
