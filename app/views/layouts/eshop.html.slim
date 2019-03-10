@@ -1,0 +1,43 @@
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    title FreeBenta!
+    link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet"
+    = stylesheet_link_tag    "eshop", media: "all", "data-turbolinks-track": "reload"
+    = stylesheet_link_tag    Rails.configuration.gradient_css.sample, media: "all", "data-turbolinks-track": "reload"
+    = javascript_include_tag "eshop", "data-turbolinks-track": "reload"
+  body
+    = render 'shared/eshop/home_top'
+    #home
+      .container
+        .home-wrap
+          #home-slick
+            .banner.banner-1
+              = image_tag("eshop/banner01.jpg")
+              .banner-caption.text-center
+                h1 Bags sale
+                h3.white-color.font-weak Up to 50% Discount
+                button.primary-btn Shop Now
+            .banner.banner-1
+              = image_tag("eshop/banner02.jpg")
+              .banner-caption
+                h1.primary-color
+                  | HOT DEAL
+                  br
+                  span.white-color.font-weak Up to 50% OFF
+                button.primary-btn Shop Now
+            .banner.banner-1
+              = image_tag("eshop/banner03.jpg")
+              .banner-caption
+                h1.white-color
+                  | New Product
+                  span Collection
+                button.primary-btn Shop Now
+        = yield
+    - render 'shared/eshop/home_bottom_sections'
+    = render 'shared/eshop/home_footer'
+
