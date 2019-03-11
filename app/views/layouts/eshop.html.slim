@@ -14,18 +14,21 @@ html lang="en"
     = render 'shared/eshop/home_top'
     #home
       .container
-        .home-wrap
         - if defined? @category
-          #home-slick
-            - @category.items.order('RANDOM()').each do |item|
-              .banner.banner-1
-                = image_tag(item.primary_image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
-                .banner-caption
-                  h1.white-color.black-border #{item.name}
-                  .price-lg #{format_price(item)}
-                  = link_to "Shop Now", item_url(item), class: "primary-btn"
-            
-        = yield
+          .home-wrap
+            #home-slick
+              - @category.items.order('RANDOM()').each do |item|
+                .banner.banner-1
+                  = image_tag(item.primary_image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
+                  .banner-caption
+                    h1.white-color.black-border #{item.name}
+                    .price-lg #{format_price(item)}
+                    = link_to "Shop Now", item_url(item), class: "primary-btn"
+              
+            - if controller_name == 'home'
+              = yield
+        - unless controller_name == 'home'
+          = yield
 
     - render 'shared/eshop/home_bottom_sections'
     = render 'shared/eshop/home_footer'
