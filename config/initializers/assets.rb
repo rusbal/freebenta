@@ -15,6 +15,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += [
   'front.js', 'front.css',
   'eshop.js', 'eshop.css',
+  'devise.js', 'devise.css',
 ]
 
 Rails.application.config.assets.precompile += Rails.configuration.gradient_css.map { |file| "#{file}.css" }
