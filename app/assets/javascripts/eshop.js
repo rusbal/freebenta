@@ -10,6 +10,7 @@
 // node_modules
 //
 // app
+//= require home
 //= require items
 
 app.debugShow()

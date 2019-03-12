@@ -19,6 +19,17 @@ html lang="en"
     = render 'shared/eshop/home_top'
     #home
       .container
+
+        - if notice
+          .myAlert-top.alert.alert-info.alert-dismissible.show
+            a href="#" class="close" data-dismiss="alert" aria-label="close" &times;
+            = notice
+
+        - if alert
+          .myAlert-top.alert.alert-danger.alert-dismissible.show
+            a href="#" class="close" data-dismiss="alert" aria-label="close" &times;
+            = alert
+
         - if defined? @category
           .home-wrap
             #home-slick
