@@ -8,4 +8,8 @@ module HomeHelper
     #number_to_currency price, unit: "₱"
     number_to_currency price, unit: currency_symbol
   end
+
+  def copyright()
+    'Copyright &copy; FreeBenta 2019'
+  end
 end
