@@ -1,0 +1,42 @@
+<li class="header-account dropdown default-dropdown">
+  <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+    <div class="header-btns-icon">
+      <i class="fa fa-user-o"></i>
+    </div>
+    <strong class="text-uppercase">
+      <% if user_signed_in? %>
+        My Account
+        <i class="fa fa-caret-down"></i>
+      <% else %>
+        Welcome to FreeBenta
+      <% end %>
+    </strong>
+  </div>
+  <% if user_signed_in? %>
+    <%= current_user.name %>
+  <% else %>
+    <%= link_to 'Sign in', new_user_session_path, class: "text-uppercase" %>
+    /
+    <%= link_to 'Register', new_user_registration_path, class: "text-uppercase" %>
+  <% end %>
+  <ul class="custom-menu">
+    <!--
+    <li><a href="#"><i class="fa fa-user-o"></i><span>My Account</span></a></li>
+    <li><a href="#"><i class="fa fa-heart-o"></i><span>My Wishlist</span></a></li>
+    <li><a href="#"><i class="fa fa-exchange"></i><span>Compare</span></a></li>
+    <li><a href="#"><i class="fa fa-check"></i><span>Checkout</span></a></li>
+    <li>
+      <%= link_to new_user_registration_path do %>
+        <i class="fa fa-user-plus"></i>
+        <span>Create an account</span>
+      <% end %>
+    </li>
+    -->
+    <li>
+      <%= link_to destroy_user_session_path, method: :delete, class: "text-uppercase" do %>
+        <i class="fa fa-unlock-alt"></i>
+        <span>Sign out</span>
+      <% end %>
+    </li>
+  </ul>
+</li>
