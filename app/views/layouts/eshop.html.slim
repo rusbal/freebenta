@@ -15,7 +15,7 @@ html lang="en"
     = stylesheet_link_tag    Rails.configuration.gradient_css.sample, media: "all", "data-turbolinks-track": "reload"
     = javascript_pack_tag    'application'
     = javascript_include_tag "eshop", "data-turbolinks-track": "reload"
-  body
+  body class="#{controller_name}-#{action_name}"
     = render 'shared/eshop/home_top'
     #home
       .container
