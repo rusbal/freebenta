@@ -1,28 +1,32 @@
-.row.m-tb-30
-  .col.col-sm-12
-    h2.clearfix
-      .pull-left= @item.name
-      .pull-right
-        span.currency-symbol PHP
-        | &nbsp;
-        = format_price(@item)
-    .m-b-10
-      = @item.description
+.m-t-30.m-b-20
+  .row
+    .col.col-sm-12
+      h2.clearfix
+        .pull-left= @item.name
+        .pull-right
+          span.currency-symbol PHP
+          | &nbsp;
+          = format_price(@item)
 
-    .item-page
-      #home-slick
-        .banner.banner-1
-          = image_tag @item.primary_image, class: 'zoom-img'
-          .banner-caption
-            .card
-              .card-body
-                h4 #{@item.primary_image.title}
-                | #{@item.primary_image.description}
-        - @item.images.each_with_index do |image, idx|
+  .row
+    .col.col-sm-6.col-xs-12.m-b-10
+      .item-page
+        #home-slick
           .banner.banner-1
-            = image_tag image, class: 'zoom-img'
+            = image_tag @item.primary_image, class: 'zoom-img'
             .banner-caption
               .card
                 .card-body
-                  h4 #{image.title}
-                  | #{image.description}
+                  h4 #{@item.primary_image.title}
+                  | #{@item.primary_image.description}
+          - @item.images.each_with_index do |image, idx|
+            .banner.banner-1
+              = image_tag image, class: 'zoom-img'
+              .banner-caption
+                .card
+                  .card-body
+                    h4 #{image.title}
+                    | #{image.description}
+
+    .col.col-sm-6.col-xs-12
+      = @item.description.html_safe
