@@ -10,16 +10,15 @@ html
     = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag    'application'
     = javascript_include_tag 'devise', 'data-turbolinks-track': 'reload'
-  body style='background-color: lightsteelblue'
+  body
+    = link_to root_path, class: 'close-window-lg' do
+      i.fa.fa-times
+
     #app.container
       section.section
         .container.mt-5
           .row
             .col-12.col-sm-8.offset-sm-2.col-md-6.offset-md-3.col-lg-6.offset-lg-3.col-xl-4.offset-xl-4
-              = link_to root_path do
-                i.fa.fa-arrow-left
-                | &nbsp; Back to Store Front
-
               .login-brand FreeBenta
 
               - if notice
