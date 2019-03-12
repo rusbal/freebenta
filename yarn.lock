@@ -1558,13 +1558,6 @@ chartjs-color@^2.1.0:
     chartjs-color-string "^0.5.0"
     color-convert "^0.5.3"
 
-chocolat@^0.4.21:
-  version "0.4.21"
-  resolved "https://registry.yarnpkg.com/chocolat/-/chocolat-0.4.21.tgz#16f5a2e0fa60aa7f07234b4e36696d4e7a52a4a1"
-  integrity sha512-KvaGUM4FAYsk+8Mfwrzw90zwP9Dfb4t9grwwDb17hqVxT+Z+T6hpAD8xkGkIwn9xxwiQdOpl0G6jn04O+UZwnA==
-  dependencies:
-    jquery "^3.0"
-
 chokidar@^2.0.0, chokidar@^2.0.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.2.tgz#9c23ea40b01638439e0513864d362aeacc5ad058"
@@ -3795,7 +3788,7 @@ jquery.nicescroll@3.7.6:
   dependencies:
     jquery ">=1.8.3"
 
-jquery@>=1.10, jquery@>=1.7, jquery@>=1.8.3, jquery@>=2.1.0, jquery@^3.0, jquery@^3.1.1, jquery@^3.3.1:
+jquery@>=1.10, jquery@>=1.7, jquery@>=1.8.3, jquery@>=2.1.0, jquery@^3.1.1, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==

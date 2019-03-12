@@ -6,5 +6,10 @@
 //= require eshop/nouislider.min
 //= require eshop/jquery.zoom.min
 //= require eshop/main
+//
+// node_modules
+//
+// app
+//= require items
 
 app.debugShow()

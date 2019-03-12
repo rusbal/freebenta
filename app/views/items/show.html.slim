@@ -12,7 +12,7 @@
     .item-page
       #home-slick
         .banner.banner-1
-          = image_tag(@item.primary_image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
+          = image_tag @item.primary_image, class: 'zoom-img'
           .banner-caption
             .card
               .card-body
@@ -20,7 +20,7 @@
                 | #{@item.primary_image.description}
         - @item.images.each_with_index do |image, idx|
           .banner.banner-1
-            = image_tag(image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
+            = image_tag image, class: 'zoom-img'
             .banner-caption
               .card
                 .card-body

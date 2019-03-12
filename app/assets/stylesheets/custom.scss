@@ -61,9 +61,11 @@
       background-color: #eee;
 
       img {
-        object-fit: inherit;
+        opacity: 0.9;
+        height: 489px;
         width: auto;
         margin: 0 auto;
+        filter: grayscale(10%);
       }
     }
   }
