@@ -6,10 +6,14 @@ html lang="en"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     meta content="width=device-width, initial-scale=1" name="viewport"
     title FreeBenta!
+    = csrf_meta_tags
+    = tag :meta, name: "controller", content: "#{controller_name}"
+    = tag :meta, name: "action", content: "#{action_name}"
     = favicon_link_tag asset_path('favicon.ico')
     link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet"
     = stylesheet_link_tag    "eshop", media: "all", "data-turbolinks-track": "reload"
     = stylesheet_link_tag    Rails.configuration.gradient_css.sample, media: "all", "data-turbolinks-track": "reload"
+    = javascript_pack_tag    'application'
     = javascript_include_tag "eshop", "data-turbolinks-track": "reload"
   body
     = render 'shared/eshop/home_top'
