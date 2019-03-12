@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_202427) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "type"
+    t.string "type", default: "User::Commoner"
     t.string "first_name"
     t.string "last_name"
     t.string "email", default: "", null: false
