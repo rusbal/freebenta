@@ -4,7 +4,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
 
-      t.string   :type # root, admin, advertiser, seller, shopper
+      t.string   :type, default: "User::Commoner" # Root, Admin, Advertiser, Commoner
       t.string   :first_name
       t.string   :last_name
 
