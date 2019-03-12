@@ -41,10 +41,9 @@ html lang="en"
                     .price-lg #{format_price(item)}
                     = link_to "Shop Now", item_url(item), class: "primary-btn"
               
-            - if controller_name == 'home'
+            /- if controller_name == 'home'
               = yield
-        - unless controller_name == 'home'
-          = yield
+        = yield
 
     - render 'shared/eshop/home_bottom_sections'
     = render 'shared/eshop/home_footer'
