@@ -55,3 +55,16 @@
   }
 }
 
+.items-show {
+  .slick-list {
+    .banner {
+      background-color: #eee;
+
+      img {
+        object-fit: inherit;
+        width: auto;
+        margin: 0 auto;
+      }
+    }
+  }
+}
