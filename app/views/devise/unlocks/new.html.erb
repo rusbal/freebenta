@@ -1,54 +1,31 @@
-<section class="section">
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-        <div class="login-brand">
-          FreeBenta
-        </div>
-
-        <div class="card card-primary">
-          <div class="card-header">
-            <h4>
-              Resend unlock instructions
-            </h4>
-          </div>
-
-          <div class="card-body">
-
-            <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-              <%= f.error_notification %>
-              <%= f.full_error :unlock_token %>
-
-              <div class="form-group">
-                <%= f.input :email, class: 'form-control', required: true, autofocus: true %>
-              </div>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                  Resend unlock instructions
-                </button>
-              </div>
-            
-            <% end %>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-        <div class="text-muted text-center">
-          <%= link_to 'Back to Sign in', new_user_session_path %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-        <div class="simple-footer">
-          <%= copyright().html_safe %>
-        </div>
-      </div>
-    </div>
+<div class="card card-primary">
+  <div class="card-header">
+    <h4>
+      Resend unlock instructions
+    </h4>
   </div>
-</section>
+
+  <div class="card-body">
+
+    <%= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
+      <%= f.full_error :unlock_token %>
+
+      <div class="form-group">
+        <%= f.input :email, class: 'form-control', required: true, autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+          Resend unlock instructions
+        </button>
+      </div>
+    
+    <% end %>
+
+  </div>
+</div>
+
+<div class="text-center">
+  <%= link_to 'Sign in', new_user_session_path %>
+</div>
