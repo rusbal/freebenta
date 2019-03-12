@@ -35,6 +35,8 @@ module Freebenta
       g.template_engine :slim
     end
 
+    config.assets.paths << Rails.root.join('node_modules')
+
     config.gradient_css = [
       'gradient-black-white',
       'gradient-blue-green',
