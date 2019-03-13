@@ -12,7 +12,7 @@ html lang="en"
     = favicon_link_tag asset_path('favicon.ico')
     link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet"
     = stylesheet_link_tag    "eshop", media: "all", "data-turbolinks-track": "reload"
-    = stylesheet_link_tag    Rails.configuration.gradient_css.sample, media: "all", "data-turbolinks-track": "reload"
+    = stylesheet_link_tag    nav_gradient, media: "all", "data-turbolinks-track": "reload"
     = javascript_pack_tag    'application'
     = javascript_include_tag "eshop", "data-turbolinks-track": "reload"
   body class="#{controller_name}-#{action_name}"

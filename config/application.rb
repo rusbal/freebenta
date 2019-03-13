@@ -37,14 +37,14 @@ module Freebenta
 
     config.assets.paths << Rails.root.join('node_modules')
 
-    config.gradient_css = [
-      'gradient-black-white',
-      'gradient-blue-green',
-      'gradient-green-violet',
-      'gradient-red-orange',
-      'gradient-indigo-cyan',
-      'gradient-amazon',
-    ]
+    config.gradient_css = {
+      black: 'gradient-black-white',
+      blue: 'gradient-blue-green',
+      green: 'gradient-green-violet',
+      red: 'gradient-red-orange',
+      indigo: 'gradient-indigo-cyan',
+      amazon: 'gradient-amazon',
+    }
 
   end
 end

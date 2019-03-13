@@ -18,4 +18,4 @@ Rails.application.config.assets.precompile += [
   'devise.js', 'devise.css',
 ]
 
-Rails.application.config.assets.precompile += Rails.configuration.gradient_css.map { |file| "#{file}.css" }
+Rails.application.config.assets.precompile += Rails.configuration.gradient_css.values { |file| "#{file}.css" }
