@@ -536,8 +536,9 @@ textarea.input {
 
 .category-nav .category-list>li>a {
   display: block;
-  padding: 14px;
+  //padding: 14px;
   text-transform: uppercase;
+  padding: 10px 14px;
 }
 
 .category-nav .category-list>li>a:hover, .category-nav .category-list>li>a:focus, .category-nav .category-list>li.dropdown.open>a {
