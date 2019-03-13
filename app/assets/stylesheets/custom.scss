@@ -39,22 +39,6 @@
   }
 }
 
-.item-page {
-  .banner-caption {
-    top: auto !important;
-    bottom: 0 !important;
-  }
-
-  .banner {
-    .card {
-      opacity: 0.75;
-      background: white;
-      border-radius: 10px;
-      padding: 10px;
-    }
-  }
-}
-
 .items-show {
   .slick-list {
     .banner {
@@ -74,6 +58,21 @@
   }
   button.slick-next {
     right: 0;
+  }
+
+  .item-page {
+    .banner-caption {
+      top: auto !important;
+      bottom: 0 !important;
+    }
+
+    .banner {
+      .card {
+        padding: 12px;
+        background-color: #eee;
+        text-align: center;
+      }
+    }
   }
 }
 

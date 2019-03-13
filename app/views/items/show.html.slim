@@ -14,19 +14,17 @@
         #home-slick
           .banner.banner-1
             = image_tag @item.primary_image, class: 'zoom-img'
-            .banner-caption
-              .card
-                .card-body
-                  h4 #{@item.primary_image.title}
-                  | #{@item.primary_image.description}
+            .card
+              .card-body
+                h4 #{@item.primary_image.title}
+                | #{@item.primary_image.description}
           - @item.images.each_with_index do |image, idx|
             .banner.banner-1
               = image_tag image, class: 'zoom-img'
-              .banner-caption
-                .card
-                  .card-body
-                    h4 #{image.title}
-                    | #{image.description}
+              .card
+                .card-body
+                  h4 #{image.title}
+                  | #{image.description}
 
     .col.col-sm-6.col-xs-12
       = @item.description.html_safe
