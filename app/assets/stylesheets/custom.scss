@@ -1,3 +1,12 @@
+#home {
+  .container-fluid:first-child {
+    background: linear-gradient(to bottom, #ddd, white, white, white, white);
+  }
+}
+
+#footer.section-grey {
+}
+
 .carousel {
   height: 440px;
 
@@ -39,17 +48,26 @@
   }
 }
 
+.home-wrap {
+  .banner {
+    img {
+      height: 489px;
+      //filter: grayscale(10%);
+      //opacity: 0.9;
+      object-fit: cover;
+    }
+  }
+}
+
 .items-show {
   .slick-list {
     .banner {
       background-color: #eee;
 
       img {
-        opacity: 0.9;
         height: 489px;
         width: auto;
         margin: 0 auto;
-        filter: grayscale(10%);
       }
     }
   }

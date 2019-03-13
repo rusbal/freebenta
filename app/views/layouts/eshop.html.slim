@@ -18,7 +18,7 @@ html lang="en"
   body class="#{controller_name}-#{action_name}"
     = render 'shared/eshop/home_top'
     #home
-      .container
+      .container-fluid
 
         - if notice
           .myAlert-top.alert.alert-info.alert-dismissible.show
@@ -35,7 +35,7 @@ html lang="en"
             #home-slick
               - @category.items.order('RANDOM()').each do |item|
                 .banner.banner-1
-                  = image_tag(item.primary_image, style: "height: 489px; filter: grayscale(10%); opacity: 0.9; object-fit: cover;")
+                  = image_tag item.primary_image
                   .banner-caption
                     h1.white-color.black-border #{item.name}
                     .price-lg #{format_price(item)}
