@@ -21,4 +21,14 @@ class Item < ApplicationRecord
   scope :sold,       -> { where(type: 'Item::Sold') }
   scope :reserved,   -> { where(type: 'Item::Reserved') }
   scope :understock, -> { where(type: 'Item::Understock') }
+
+  def other_image(resize)
+    if images.count == 0
+      image = primary_image
+    else
+      image = images.first
+    end
+
+    resize ? image.variant(resize: resize) : image
+  end
 end

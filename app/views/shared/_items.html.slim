@@ -1,0 +1,13 @@
+.row.m-b-30
+  - @items.each do |item|
+    .col-lg-2.col-md-3.col-sm-4.col-xs-6.col-6
+      = link_to item_url(item), class: 'card-link' do
+        .card.items
+          .item-image
+            = image_tag item.primary_image.variant(resize: "200x"), class: "card-img-top"
+            = image_tag item.other_image("200x"), class: "card-img-top"
+          .card-body
+            p.card-text
+              = item.primary_image.title.truncate(22)
+              br
+              = format_price(item)

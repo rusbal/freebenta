@@ -18,4 +18,9 @@ module HomeHelper
     return Rails.configuration.gradient_css[:black] if controller_name == 'items'
     Rails.configuration.gradient_css[:red]
   end
+
+  def image_public_url(image, resize)
+    image = image.variant(resize: resize) if resize
+    resolve_image_source(image, nil)
+  end
 end
