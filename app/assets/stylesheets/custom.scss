@@ -1,15 +1,22 @@
 @media (min-width: 992px) {
   .category-nav {
-    li.dropdown {
-      background: linear-gradient(to bottom, #ddd, #eee, white, white, white);
-      padding-top: 2px;
-      margin-bottom: -2px;
+    ul.category-list {
+      border: none;
 
-      a {
-        color: saddlebrown;
+      li.dropdown {
+        background: linear-gradient(to bottom, #ddd, #eee, white, white, white);
+        border-left: 1px solid #dadada;
 
-        &:hover {
-          color: #F8694A;
+        &:last-child {
+          border: none;
+        }
+
+        a {
+          color: saddlebrown;
+
+          &:hover {
+            color: #F8694A;
+          }
         }
       }
     }
