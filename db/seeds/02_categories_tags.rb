@@ -9,7 +9,7 @@ tags = {
     "Beauty and Health",
   ],
   "Men": [
-    "Business and Earning Opportunities",
+    "Business Opportunities",
     "Cars and Automotives",
     "Construction and Farming",
     "Heavy Machinery and Trucks",
@@ -20,7 +20,7 @@ tags = {
     "Motorcycles and Scooters",
   ],
   "Women": [
-    "Business and Earning Opportunities",
+    "Business Opportunities",
     "Sports and Hobbies",
     "Pets and Animals",
     "Musical Instruments",
