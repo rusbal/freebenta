@@ -1776,10 +1776,10 @@ a.card-link > div:hover {
     img:last-child {
       z-index: 2;
       margin-top: -272px;
+      transition: opacity 0.3s linear;
 
       &:hover {
         opacity: 0;
-        transition: all 0.2s linear;
       }
     }
   }
