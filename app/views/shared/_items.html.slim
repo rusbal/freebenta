@@ -4,8 +4,8 @@
       = link_to item_url(item), class: 'card-link' do
         .card.items
           .item-image
-            = image_tag item.primary_image.variant(resize: "200x"), class: "card-img-top"
             = image_tag item.other_image("200x"), class: "card-img-top"
+            = image_tag item.primary_image.variant(resize: "200x"), class: "card-img-top"
           .card-body
             p.card-text
               = item.primary_image.title.truncate(22)
