@@ -130,3 +130,9 @@
   margin-right: auto;
   width: 80%;
 }
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
