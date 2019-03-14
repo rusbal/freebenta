@@ -14,7 +14,7 @@ module HomeHelper
   end
 
   def nav_gradient()
-    return Rails.configuration.gradient_css[:amazon] if controller_name == 'home'
+    #return Rails.configuration.gradient_css[:amazon] if controller_name == 'home'
     return Rails.configuration.gradient_css[:black] if controller_name == 'items'
     Rails.configuration.gradient_css[:red]
   end
