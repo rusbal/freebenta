@@ -7,7 +7,10 @@
             = image_tag item.other_image("200x"), class: "card-img-top"
             = image_tag item.primary_image.variant(resize: "200x"), class: "card-img-top"
           .card-body
-            p.card-text
-              = item.primary_image.title.truncate(22)
-              br
-              = format_price(item)
+            .card-text
+              .item-name
+                = item.name.truncate(22)
+              .item-description
+                = item.description.truncate(22)
+          .price
+            = format_price(item)

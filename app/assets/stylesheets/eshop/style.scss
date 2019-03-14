@@ -1760,6 +1760,16 @@ a.card-link > div:hover {
   box-shadow: 1px 1px 10px #eee;
   //filter: grayscale(70%);
 
+  .price {
+    position: absolute;
+    bottom: 60px;
+    background: #000;
+    color: white;
+    padding: 4px 6px;
+    left: 25px;
+    border-radius: 2px;
+  }
+
   .item-image {
     height: 250px;
 
@@ -1788,7 +1798,15 @@ a.card-link > div:hover {
 
     p {
       line-height: normal;
-      text-align: center;
+    }
+
+    .card-text {
+      padding: 3px 7px;
+      .item-name {
+      }
+      .item-description {
+        color: gray;
+      }
     }
   }
 }
