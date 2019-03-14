@@ -26,7 +26,7 @@ categories = {
   "Home and Business": [
     "Real Estate",
     "Construction and Farming",
-    "Business and Earning Opportunities",
+    "Business Opportunities",
     "Heavy Machinery and Trucks",
     "Home and Furniture",
   ]
