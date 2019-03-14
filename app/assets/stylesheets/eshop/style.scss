@@ -1770,11 +1770,7 @@ a.card-link > div:hover {
     }
 
     /** This is the hover change-image effect */
-    img:first-child {
-      z-index: 1;
-    }
     img:last-child {
-      z-index: 2;
       margin-top: -272px;
       transition: opacity 0.3s linear;
 
