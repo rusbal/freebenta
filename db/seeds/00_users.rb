@@ -2,9 +2,9 @@
 require 'faker'
 
 root       = [ 'raymond@philippinedev.com' ]
-admin      =  3.times.map { |n| "admin#{n + 1}@gmail.com" }
-advertiser =  3.times.map { |n| "ads#{n + 1}@gmail.com" }
-commoner   = 50.times.map { |n| "commoner#{n + 1}@gmail.com" }
+admin      =  3.times.map { |n| "admin#{n + 1}@freebenta.com" }
+advertiser =  3.times.map { |n| "ads#{n + 1}@freebenta.com" }
+commoner   = 50.times.map { |n| "commoner#{n + 1}@freebenta.com" }
 
 def create(email, type)
   user = User.new
