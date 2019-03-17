@@ -136,3 +136,12 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.avatar {
+  border: none !important;
+  img {
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+  }
+}

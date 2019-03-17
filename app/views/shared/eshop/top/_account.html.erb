@@ -1,8 +1,8 @@
 <li class="header-account dropdown default-dropdown">
   <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
     <% if user_signed_in? %>
-      <div class="header-btns-icon">
-        <i class="fa fa-user-o"></i>
+      <div class="header-btns-icon avatar">
+        <%= image_tag current_user.avatar %>
       </div>
     <% end %>
     <strong class="text-uppercase">
